@@ -1,4 +1,6 @@
+using Blog.Core.Interfaces;
 using Blog.Infrastructure.Data;
+using Blog.Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,7 +19,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
         builder.Configuration.GetConnectionString("BlogDB")
         )
 );
-
+builder.Services.AddScoped<ICategoryService,CategoryService>();
 
 var app = builder.Build();
 
