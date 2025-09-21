@@ -19,7 +19,12 @@ builder.Services.AddDbContext<AppDbContext>(options =>
         builder.Configuration.GetConnectionString("BlogDB")
         )
 );
-builder.Services.AddScoped<ICategoryService,CategoryService>();
+// Request Life Time
+//builder.Services.AddScoped<ICategoryService,CategoryService>();
+//builder.Services.AddSingleton<ICategoryService,CategoryService>();
+//builder.Services.AddTransient<ICategoryService,CategoryService>();
+//builder.Services.AddScoped(typeof(IGenaricRepository<>), typeof(GenaricRepository<>));
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 var app = builder.Build();
 

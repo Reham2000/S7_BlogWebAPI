@@ -12,13 +12,13 @@ namespace Blog.Core.Interfaces
         // get all Categories
         Task<IEnumerable<Category>> GetAllAsync();
         // get by id
-        //Task<Category> GetByIdAsync(int id);
+        Task<Category> GetByIdAsync(int id);
         //// create
-        //Task CreateAsync(Category category);
+        Task CreateAsync(Category category);
         //// Update
-        //Task<bool> UpdateAsync(Category category);
-        //Task<bool> UpdateAsync(int id, Category category);
+        Task<bool> UpdateAsync(Category category);
+        Task<bool> UpdateAsync(int id, Category category);
         //// delete
-        //Task<bool> DeleteAsync(int id);
+        Task<bool> DeleteAsync(int id);
     }
 }
