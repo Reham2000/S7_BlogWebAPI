@@ -34,7 +34,25 @@ namespace Blog.APIs.Controllers
                 {
                     StatusCode = 200,
                     Message = "Data Retrived Successfully ",
-                    Data = Posts
+                    Data = Posts.Select(p => new 
+                    {
+                        Id = p.Id,
+                        Title = p.Title,
+                        Content = p.Content,
+                        CreatedAt = p.CreatedAt,
+                        CategoryId = p.CategoryId,
+                        CategoryName = p.Category.Name,
+                        UserId = p.UserId,
+                        UserName = p.User.UserName,
+                        comments = p.comments.Select(c => new 
+                        {
+                            Id = c.Id,
+                            Content = c.Content,
+                            CreatedAt = c.CreatedAt,
+                            UserId = c.UserId,
+                            UserName = c.User.UserName
+                        })
+                    })
                 });
             }
             catch (Exception ex)

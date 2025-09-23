@@ -145,3 +145,10 @@ D:\projects\APIs\S7\S7_Bolg\Blog.APIs\obj\Debug\net8.0\refint\Blog.APIs.dll
 D:\projects\APIs\S7\S7_Bolg\Blog.APIs\obj\Debug\net8.0\Blog.APIs.pdb
 D:\projects\APIs\S7\S7_Bolg\Blog.APIs\obj\Debug\net8.0\Blog.APIs.genruntimeconfig.cache
 D:\projects\APIs\S7\S7_Bolg\Blog.APIs\obj\Debug\net8.0\ref\Blog.APIs.dll
+D:\projects\APIs\S7\S7_Bolg\Blog.APIs\bin\Debug\net8.0\Castle.Core.dll
+D:\projects\APIs\S7\S7_Bolg\Blog.APIs\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Proxies.dll
+D:\projects\APIs\S7\S7_Bolg\Blog.APIs\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\projects\APIs\S7\S7_Bolg\Blog.APIs\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\projects\APIs\S7\S7_Bolg\Blog.APIs\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\projects\APIs\S7\S7_Bolg\Blog.APIs\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+D:\projects\APIs\S7\S7_Bolg\Blog.APIs\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll

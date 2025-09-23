@@ -16,6 +16,6 @@ namespace Blog.Core.Models
         public string Name { get; set; }
         // Relations
         // MAny Posts
-        public ICollection<Post> Posts { get; set; } = new List<Post>();
+        public virtual ICollection<Post> Posts { get; set; } = new List<Post>();
     }
 }

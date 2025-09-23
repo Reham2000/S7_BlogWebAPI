@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Blog.Core.Models
@@ -27,13 +28,12 @@ namespace Blog.Core.Models
         // 1. belongs to one category
         [ForeignKey("Category")]
         public int CategoryId { get; set; }
-        public Category Category { get; set; }
+        public virtual Category Category { get; set; }
         // 2. One User Create Post
         [ForeignKey("User")]
-        public int UserId { get; set; }
-        public User User { get; set; }
-
-        ICollection<Comment> comments { get; set; } = new List<Comment>();
+        public string UserId { get; set; }
+        public virtual User User { get; set; }
+        public virtual ICollection<Comment> comments { get; set; } = new List<Comment>();
 
     }
 }

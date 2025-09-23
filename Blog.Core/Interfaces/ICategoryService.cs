@@ -10,7 +10,7 @@ namespace Blog.Core.Interfaces
     public interface ICategoryService
     {
         // get all Categories
-        Task<IEnumerable<Category>> GetAllAsync();
+        Task<IEnumerable<object>> GetAllAsync();
         // get by id
         Task<Category> GetByIdAsync(int id);
         //// create

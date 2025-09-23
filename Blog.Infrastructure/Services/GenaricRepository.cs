@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -26,7 +27,21 @@ namespace Blog.Infrastructure.Services
         {
             return await _myTable.ToListAsync();
         }
-
+        public async Task<IEnumerable<TableModel>> GetAllAsync(
+                Expression<Func<TableModel, bool>> predicate = null,
+                IEnumerable<Expression<Func<TableModel, object>>> includes = null
+            )
+        {
+            IQueryable<TableModel> query = _myTable;
+            // Select * From Table
+            // Select * From Table where condation
+            if(predicate != null)
+                query = query.Where(predicate);
+            if(includes != null)
+                foreach(var include in includes)
+                    query = query.Include(include);
+            return await query.ToListAsync();
+        }
         public async Task<TableModel?> GetByIdAsync(int id)
         {
             return await _myTable.FindAsync(id);

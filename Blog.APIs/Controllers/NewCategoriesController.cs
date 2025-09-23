@@ -3,6 +3,7 @@ using Blog.Core.Interfaces;
 using Blog.Core.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq.Expressions;
 
 namespace Blog.APIs.Controllers
 {
@@ -26,7 +27,13 @@ namespace Blog.APIs.Controllers
         {
             try
             {
-                var Categories = await _unitOfWork.Categories.GetAllAsync();
+                var Categories = await _unitOfWork.Categories.GetAllAsync(
+                      //predicate:  c => c.Id == 6,
+                      includes: new Expression<Func<Category, object>>[]
+                      {
+                          c => c.Posts
+                      }
+                    );
                 if(Categories is null || ! Categories.Any())
                 {
                     return NotFound(new
@@ -40,7 +47,20 @@ namespace Blog.APIs.Controllers
                 {
                     StatusCode = 200,
                     Message = "Data Retrived Successfully ",
-                    Data = Categories
+                    Data = Categories.Select(c => new
+                    {
+                        Id = c.Id,
+                        Name = c.Name,
+                        Posts = c.Posts.Select(p => new
+                        {
+                            PostId = p.Id,
+                            Title = p.Title,
+                            Content = p.Content,
+                            CreatedAt = p.CreatedAt,
+                            CategoryId = p.CategoryId,
+                            UserId = p.UserId
+                        })
+                    })
                 });
             }catch (Exception ex)
             {

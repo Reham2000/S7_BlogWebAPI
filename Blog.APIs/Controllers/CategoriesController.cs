@@ -24,7 +24,7 @@ namespace Blog.APIs.Controllers
             _unitOfWork = unitOfWork;
         }
         [HttpGet("Old")] // https://localhost:7053/V1.3/Categories/Old
-        public async Task<IEnumerable<Category>> GetAll2()
+        public async Task<IEnumerable<object>> GetAll2()
         {
             var Categories = await _unitOfWork.CategoryService.GetAllAsync();
             if (Categories == null || !Categories.Any())

@@ -17,7 +17,7 @@ namespace Blog.Core.DTos
         public string Content { get; set; }
         // Relations
         // 1. User Who Create Comment
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         // 2. Post which my comment belongs to
         public int PostId { get; set; }
     }

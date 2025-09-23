@@ -25,7 +25,7 @@ namespace Blog.Core.DTos
         // 1. belongs to one category
         public int CategoryId { get; set; }
         // 2. One User Create Post
-        public int UserId { get; set; }
+        public string UserId { get; set; }
 
     }
 }

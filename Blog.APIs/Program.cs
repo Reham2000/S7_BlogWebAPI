@@ -1,6 +1,8 @@
 using Blog.Core.Interfaces;
+using Blog.Core.Models;
 using Blog.Infrastructure.Data;
 using Blog.Infrastructure.Services;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,10 +17,16 @@ builder.Services.AddSwaggerGen();
 // Database Connection
 
 builder.Services.AddDbContext<AppDbContext>(options => 
-    options.UseSqlServer(
+    options.UseLazyLoadingProxies()
+    .UseSqlServer(
         builder.Configuration.GetConnectionString("BlogDB")
         )
 );
+
+// Add Identity
+builder.Services.AddIdentity<User, IdentityRole>()
+    .AddEntityFrameworkStores<AppDbContext>();
+
 // Request Life Time
 //builder.Services.AddScoped<ICategoryService,CategoryService>();
 //builder.Services.AddSingleton<ICategoryService,CategoryService>();

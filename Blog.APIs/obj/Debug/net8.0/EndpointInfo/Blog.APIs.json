@@ -17,25 +17,19 @@
               "text/plain": {
                 "schema": {
                   "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Category"
-                  }
+                  "items": { }
                 }
               },
               "application/json": {
                 "schema": {
                   "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Category"
-                  }
+                  "items": { }
                 }
               },
               "text/json": {
                 "schema": {
                   "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Category"
-                  }
+                  "items": { }
                 }
               }
             }
@@ -542,31 +536,6 @@
   },
   "components": {
     "schemas": {
-      "Category": {
-        "required": [
-          "name"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "name": {
-            "maxLength": 50,
-            "minLength": 2,
-            "type": "string"
-          },
-          "posts": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Post"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "CategoryDTo": {
         "required": [
           "name"
@@ -601,54 +570,12 @@
             "type": "string"
           },
           "userId": {
-            "type": "integer",
-            "format": "int32"
+            "type": "string",
+            "nullable": true
           },
           "postId": {
             "type": "integer",
             "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Post": {
-        "required": [
-          "content",
-          "title"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "title": {
-            "maxLength": 50,
-            "minLength": 3,
-            "type": "string"
-          },
-          "content": {
-            "maxLength": 300,
-            "minLength": 10,
-            "type": "string"
-          },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "categoryId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "category": {
-            "$ref": "#/components/schemas/Category"
-          },
-          "userId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "user": {
-            "$ref": "#/components/schemas/User"
           }
         },
         "additionalProperties": false
@@ -679,40 +606,8 @@
             "format": "int32"
           },
           "userId": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
-      "User": {
-        "required": [
-          "email",
-          "password",
-          "userName"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "userName": {
-            "maxLength": 50,
-            "minLength": 3,
-            "type": "string"
-          },
-          "email": {
-            "maxLength": 100,
-            "minLength": 0,
             "type": "string",
-            "format": "email"
-          },
-          "password": {
-            "maxLength": 50,
-            "minLength": 4,
-            "type": "string",
-            "format": "password"
+            "nullable": true
           }
         },
         "additionalProperties": false

@@ -20,11 +20,11 @@ namespace Blog.Core.Models
         // Relations
         // 1. User Who Create Comment
         [ForeignKey("User")]
-        public int UserId { get; set; }
-        public User User { get; set; }
+        public string UserId { get; set; }
+        public virtual User User { get; set; }
         // 2. Post which my comment belongs to
         [ForeignKey("Post")]
         public int PostId { get; set; }
-        public Post Post { get; set; }
+        public virtual Post Post { get; set; }
     }
 }
