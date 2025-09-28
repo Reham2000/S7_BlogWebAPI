@@ -1,6 +1,7 @@
 ﻿using Blog.Core.DTos;
 using Blog.Core.Interfaces;
 using Blog.Core.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,6 +9,7 @@ namespace Blog.APIs.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = "Admin")]
     public class PostsController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;

@@ -152,3 +152,4 @@ D:\projects\APIs\S7\S7_Bolg\Blog.APIs\bin\Debug\net8.0\Microsoft.AspNetCore.Cryp
 D:\projects\APIs\S7\S7_Bolg\Blog.APIs\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 D:\projects\APIs\S7\S7_Bolg\Blog.APIs\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
 D:\projects\APIs\S7\S7_Bolg\Blog.APIs\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+D:\projects\APIs\S7\S7_Bolg\Blog.APIs\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
